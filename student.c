@@ -3,14 +3,26 @@
 /* [TODO]
    Implement function createStudents
 */
+Student *createStudents(int n) {
+   return (Student *)malloc(n * sizeof(Student));
+}
 
 /* [TODO]
    Implement function newStudent
 */
+Student newStudent(char *name, int id) {
+   Student student;
+   student.name = strdup(name);
+   student.id = id;
+   return student;
+}
 
 /* [TODO]
    Implement function appendStudent
 */
+void appendStudent(Student *students, int index, Student student) {
+   students[index] = student;
+}
 
 void printStudents(FILE *output, Student *students, int length) {
   for (int i = 0; i < length; i++) {
@@ -21,3 +33,9 @@ void printStudents(FILE *output, Student *students, int length) {
 /* [TODO]
    Implement function freeStudents
 */
+void freeStudents(Student *students, int length) {
+   for (i=0;i<length;i++) {
+      free(students[i].name);
+   }
+   free(students);
+}

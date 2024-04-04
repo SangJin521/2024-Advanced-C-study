@@ -23,14 +23,17 @@ void quickSort(Student *students, int length, int (*compare)(Student, Student)) 
    int high = length - 1;
 
    while (low <= high) {
-      while (compare(students[low], pivot)) {
+      while (compare(students[low], pivot) < 0) {
          low++;
       }
-      while (compare(students[high], pivot)) {
+      while (compare(students[high], pivot) > 0) {
          high--;
       }
       if (low <= high) {
          swap(students[low], students[high]);
       }
    }
+
+   quickSort(students, high + 1, compare);
+   quicksort(students + low, length - low, compare);
 }

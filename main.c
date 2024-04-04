@@ -35,11 +35,10 @@ int main(int argc, char *argv[]) { // [TODO] Fill in the parameters
         char name[MAX_BUFFER_SIZE];
         int id;
 
-        sscanf(line, "%*s: %s %*s: %*s %*s: %d", name, &id); // [TODO] Fill in the arguments
+        sscanf(line, "name: %s major: %*s id: %d", name, &id); // [TODO] Fill in the arguments
         appendStudent(students, index, newStudent(name, id)); // [TODO] Fill in the arguments
         index++;
     }
-
     SortBy sortBy = setSortBy(filename); // [TODO] Fill in the arguments
     switch (sortBy) {
     case NAME:

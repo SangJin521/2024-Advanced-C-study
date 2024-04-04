@@ -18,6 +18,10 @@ int compareById(Student a, Student b) {
    Implement function quickSort
 */
 void quickSort(Student *students, int length, int (*compare)(Student, Student)) {
+   if (length <= 1) {
+      return;
+   }
+
    Student pivot = students[length/2];
    int low = 0;
    int high = length - 1;
@@ -31,6 +35,8 @@ void quickSort(Student *students, int length, int (*compare)(Student, Student)) 
       }
       if (low <= high) {
          swap(&students[low], &students[high]);
+         low++;
+         high--;
       }
    }
 

@@ -34,7 +34,7 @@ void printStudents(FILE *output, Student *students, int length) {
    Implement function freeStudents
 */
 void freeStudents(Student *students, int length) {
-   for (i=0;i<length;i++) {
+   for (int i=0;i<length;i++) {
       free(students[i].name);
    }
    free(students);

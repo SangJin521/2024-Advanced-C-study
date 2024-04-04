@@ -30,10 +30,10 @@ void quickSort(Student *students, int length, int (*compare)(Student, Student)) 
          high--;
       }
       if (low <= high) {
-         swap(students[low], students[high]);
+         swap(&students[low], &students[high]);
       }
    }
 
    quickSort(students, high + 1, compare);
-   quicksort(students + low, length - low, compare);
+   quickSort(students + low, length - low, compare);
 }

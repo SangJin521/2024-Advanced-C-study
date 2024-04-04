@@ -55,6 +55,7 @@ int main(int argc, char *argv[]) { // [TODO] Fill in the parameters
     default:
         exit(EXIT_FAILURE);
     }
+    printf("1\n");
     
     freeStudents(students, length); // [TODO] Fill in the arguments
     free(filename);
